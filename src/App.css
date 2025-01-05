@@ -3,6 +3,8 @@ body {
   padding: 32px;
   color: #201042;
   background-image: url('./img/bg-galaxy.jpg');
+  background-position: center;
+  background-size: cover;
 }
 
 input,
@@ -30,6 +32,13 @@ button:hover {
   opacity: 1;
 }
 
+h2 {
+  width: 100%;
+  margin: 0;
+  font-size: 20px;
+  border-bottom: 1px solid #201042;
+}
+
 .app {
   max-width: 600px;
   margin: 0 auto;
@@ -38,20 +47,34 @@ button:hover {
   border-radius: 10px;
 }
 
+.todo{ 
+  background-color: #B288C0;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 16px;
+  margin-bottom: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .title {
   text-align: center;
-  font-size: 24px;
   margin-bottom: 16px;
+  text-transform: uppercase;
 }
 
 .text {
   margin: 0;
+  padding: 8px 0;
+  font-size: 14px;
 }
 
 .category {
-  color: #B288C0;
+  color: #7E5A9B;
   font-size: 12px;
-  margin: 4px 0;
+  margin: 0;
+  padding-bottom: 8px;
 }
 
 .btn-complete {
@@ -70,4 +93,25 @@ button:hover {
   background-color: #7E5A9B;
   color: white;
   padding: 8px 16px;
+}
+
+.btn-order {
+  background-color: #7E5A9B;
+  color: white;
+  padding: 8px 16px;
+}
+
+.filter-options {
+  display: flex;
+  justify-content: space-between;
+  gap: 3rem;
+}
+
+.filter-options div {
+  flex: 1 1 0;
+}
+
+.filter,
+.search {
+  padding-bottom: 24px;
 }
