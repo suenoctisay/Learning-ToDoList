@@ -4,6 +4,7 @@ import './App.css';
 
 import Todo from './components/todo';
 import TodoForm from './components/todo-form';
+import Search from './components/search';
 
 
 function App() {
@@ -55,20 +56,34 @@ function App() {
     setTodo (newTodo);
   }
 
+  const [search, setSearch] = useState('');
+
   return (
     <div className="app">
       <h1 className="title">Task List</h1>
-      {/* TAKS LIST */}
+      {/* SEARCH */}
+      <Search 
+        search={search}
+        setSearch={setSearch}
+      />
+
+      {/* TODO LIST */}
       <div className="todo-list">
-        {todo.map((todo) => (
-          < Todo 
-            key={todo.id} 
-            todo={todo} 
-            removeTodo={removeTodo}
-            completeTodo={completeTodo}
-          />
-        ))}
+        {todo
+          .filter((todo) => 
+            todo.text.toLowerCase().includes(search.toLowerCase()
+          ))
+          .map((todo) => (
+            < Todo 
+              key={todo.id} 
+              todo={todo} 
+              removeTodo={removeTodo}
+              completeTodo={completeTodo}
+            />
+          ))
+        }
       </div>
+      
       {/* ADD TASK */}
       < TodoForm 
         addTodo={addTodo}
