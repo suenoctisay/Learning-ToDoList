@@ -38,6 +38,13 @@ function App() {
     setTodo([...todo, newTodo]);
   };
 
+  const removeTodo = (id) => {
+    const newTodo = [...todo].filter(
+      (todo) => todo.id !== id ? todo : null
+    );
+    setTodo(newTodo);
+  }
+
   return (
     <div className="app">
       <h1 className="title">Task List</h1>
@@ -47,6 +54,7 @@ function App() {
           < Todo 
             key={todo.id} 
             todo={todo} 
+            removeTodo={removeTodo}
           />
         ))}
       </div>
